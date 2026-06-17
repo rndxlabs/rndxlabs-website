@@ -107,12 +107,6 @@
   .footmeta{font-family:var(--mono);text-align:center;color:var(--muted2);font-size:11px;margin-top:24px;line-height:1.9}
   .footmeta a{color:var(--muted2)}
 
-  /* event-modus (accent-loos, dot in off-white) */
-  .eventbar{display:flex;align-items:center;justify-content:center;gap:9px;margin:0 0 16px;padding:11px 16px;
-    background:var(--surface);border:1px solid var(--rule);border-radius:12px;
-    font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-  .eventbar .dot{width:7px;height:7px;border-radius:50%;background:var(--paper);flex:0 0 auto}
-
   .reveal{opacity:0;transform:translateY(12px);animation:up .6s var(--ease) forwards}
   .reveal:nth-child(2){animation-delay:.05s}.reveal:nth-child(3){animation-delay:.1s}
   @keyframes up{to{opacity:1;transform:none}}
@@ -164,25 +158,10 @@ const DATA={
   photo:"https://rndxlabs.com/assets/murat-yeni.jpg"
 };
 
-/* Event-modus — los van de statistiek. on:false => geen banner. */
-const EVENT={ on:true, label:"PVB-bijeenkomst · Arnhem" };
-
-/* Statistiek — anonieme, cookieloze ping. Leeg = uit (faalt stil). TODO: COLLECTOR_URL uit handoff #3 */
-const COLLECTOR_URL="";
-(function ping(){
-  if(!COLLECTOR_URL) return;
-  try{
-    const body=JSON.stringify({site:"rndx",page:"murat-yeni",event:EVENT.on?EVENT.label:null,ref:document.referrer||null});
-    if(navigator.sendBeacon){navigator.sendBeacon(COLLECTOR_URL,new Blob([body],{type:"application/json"}));}
-    else{fetch(COLLECTOR_URL,{method:"POST",mode:"no-cors",keepalive:true,headers:{"Content-Type":"application/json"},body:body}).catch(function(){});}
-  }catch(e){}
-})();
-
-/* Event-bewuste, Engelstalige prefilled berichten */
-const _ctx=EVENT.on?(" — we met at "+EVENT.label):"";
-const WA_TEXT=encodeURIComponent("Hi Murat"+_ctx+", ");
-const MAIL_SUBJECT=encodeURIComponent(EVENT.on?("Hello — "+EVENT.label):"Hello");
-const MAIL_BODY=encodeURIComponent("Hi Murat,\n\n"+(EVENT.on?("Great to meet you at "+EVENT.label+". "):"")+"I'd like to get in touch.\n\n");
+/* Engelstalige prefilled berichten */
+const WA_TEXT=encodeURIComponent("Hi Murat, ");
+const MAIL_SUBJECT=encodeURIComponent("Hello");
+const MAIL_BODY=encodeURIComponent("Hi Murat,\n\nI'd like to get in touch.\n\n");
 
 function items(d){return[
   {t:"Call",s:d.phone,href:"tel:+"+d.whatsapp,ic:'<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>'},
@@ -197,14 +176,6 @@ items(DATA).forEach(a=>{const el=document.createElement("a");el.className="actio
   el.innerHTML=`<span class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${a.ic}</svg></span><span class="lbl"><b>${a.t}</b><span>${a.s}</span></span>${chev}`;
   nav.appendChild(el);});
 document.getElementById("footmeta").innerHTML=DATA.email+" · "+DATA.phone+"<br>RNDX Labs B.V. · KvK "+DATA.kvk;
-
-/* Event-banner — bovenaan, los van de statistiek */
-if(EVENT.on){
-  const b=document.createElement("div");
-  b.className="eventbar reveal";
-  b.innerHTML='<span class="dot"></span>You met me at '+EVENT.label;
-  document.querySelector(".phone").prepend(b);
-}
 
 /* vCard met ingebedde foto (same-origin fetch -> base64), met PHOTO;VALUE=URI fallback */
 async function buildVCard(){
