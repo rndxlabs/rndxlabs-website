@@ -12,6 +12,25 @@
   [headers.values]
     X-Cloudflare-No-Transform = "1"
 
+# ── Murat Yeni digital card: noindex (laag 2 van 3) ──
+[[headers]]
+  for = "/murat-yeni"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/murat-yeni/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+# ── Murat Yeni digital card ─────────────────────────
+# Clean-URL rewrite: /murat-yeni serveert 200 zonder 301-hop
+[[redirects]]
+  from   = "/murat-yeni"
+  to     = "/murat-yeni/index.html"
+  status = 200
+  force  = true
+
 # ── Demo redirects ──────────────────────────────────
 # Korte URL's die doorverwijzen naar de demo map
 

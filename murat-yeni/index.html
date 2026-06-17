@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Murat Yeni · RNDX Labs</title>
+<meta name="description" content="Digital card — Murat Yeni, Founder & Lead Systems Architect at RNDX Labs.">
+<link rel="canonical" href="https://rndxlabs.com/murat-yeni">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Murat Yeni · RNDX Labs">
+<meta property="og:description" content="Founder & Lead Systems Architect at RNDX Labs — energy monitoring and grid intelligence.">
+<meta property="og:url" content="https://rndxlabs.com/murat-yeni">
+<meta property="og:image" content="https://rndxlabs.com/assets/og-image.png">
+<meta property="profile:first_name" content="Murat">
+<meta property="profile:last_name" content="Yeni">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Murat Yeni · RNDX Labs">
+<meta name="twitter:description" content="Founder & Lead Systems Architect at RNDX Labs — energy monitoring and grid intelligence.">
+<meta name="twitter:image" content="https://rndxlabs.com/assets/og-image.png">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<style>
+  /* ===== Self-hosted fonts (geen CDN) ===== */
+  @font-face{font-family:"DM Sans";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/dm-sans-v17-latin-regular.woff2") format("woff2")}
+  @font-face{font-family:"DM Sans";font-style:normal;font-weight:500;font-display:swap;src:url("/fonts/dm-sans-v17-latin-500.woff2") format("woff2")}
+  @font-face{font-family:"DM Sans";font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/dm-sans-v17-latin-600.woff2") format("woff2")}
+  @font-face{font-family:"DM Mono";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/dm-mono-v16-latin-regular.woff2") format("woff2")}
+  @font-face{font-family:"DM Mono";font-style:normal;font-weight:500;font-display:swap;src:url("/fonts/dm-mono-v16-latin-500.woff2") format("woff2")}
+  @font-face{font-family:"Syne";font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/syne-v24-latin-600.woff2") format("woff2")}
+  @font-face{font-family:"Syne";font-style:normal;font-weight:700;font-display:swap;src:url("/fonts/syne-v24-latin-700.woff2") format("woff2")}
+  @font-face{font-family:"Syne";font-style:normal;font-weight:800;font-display:swap;src:url("/fonts/syne-v24-latin-800.woff2") format("woff2")}
+  @font-face{font-family:"Exo 2";font-style:normal;font-weight:700;font-display:swap;src:url("/fonts/exo-2-v26-latin-700.woff2") format("woff2")}
+  @font-face{font-family:"Exo 2";font-style:italic;font-weight:700;font-display:swap;src:url("/fonts/exo-2-v26-latin-700italic.woff2") format("woff2")}
+</style>
+<style>
+  /* ===== RNDX Labs tokens (monochroom-warm) ===== */
+  :root{
+    --ink:#0F0F0D; --surface:#161618; --raised:#1E1E21;
+    --paper:#F7F6F3; --muted:#B8B8B2; --muted2:#7A7A74;
+    --rule:rgba(247,246,243,.10); --rule-strong:rgba(247,246,243,.18);
+    --sans:"DM Sans",system-ui,sans-serif;
+    --mono:"DM Mono",ui-monospace,monospace;
+    --display:"Syne",var(--sans);
+    --logo:"Exo 2",var(--sans);
+    --maxw:430px; --tap:56px; --ease:cubic-bezier(.22,1,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  body{font-family:var(--sans);background:var(--ink);color:var(--muted);line-height:1.6;-webkit-font-smoothing:antialiased}
+  /* grain over alles (~1,4%) */
+  body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9000;opacity:.4;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");}
+  .phone{max-width:var(--maxw);margin:0 auto;padding:0 20px 40px;position:relative}
+
+  /* top */
+  .top{display:flex;align-items:center;justify-content:space-between;padding:18px 4px 8px}
+  .wordmark{font-family:var(--logo);font-weight:700;font-size:18px;letter-spacing:-.01em;color:var(--paper)}
+  .wordmark i{font-style:italic}
+  .wordmark .labs{font-weight:400;color:var(--muted)}
+  .eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted2)}
+
+  /* hero met blueprint-grid + crop-marks */
+  .hero{position:relative;text-align:center;padding:30px 8px 8px;margin-top:6px}
+  .hero .grid{position:absolute;inset:-1px 0 0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--rule) 1px,transparent 1px),linear-gradient(90deg,var(--rule) 1px,transparent 1px);
+    background-size:44px 44px;-webkit-mask-image:radial-gradient(ellipse 85% 70% at 50% 35%,#000 35%,transparent 100%);
+    mask-image:radial-gradient(ellipse 85% 70% at 50% 35%,#000 35%,transparent 100%)}
+  .hero>*{position:relative;z-index:1}
+  .avatar{width:104px;height:104px;border-radius:26px;margin:0 auto 18px;overflow:hidden;
+    background:linear-gradient(160deg,#26262a,#0f0f0d);display:grid;place-items:center;color:var(--paper);
+    font:700 36px/1 var(--display);box-shadow:0 12px 36px rgba(0,0,0,.5);border:1px solid var(--rule)}
+  .avatar img{width:100%;height:100%;object-fit:cover}
+  .hero h1{font-family:var(--display);font-size:30px;font-weight:700;letter-spacing:-.02em;color:var(--paper)}
+  .hero .role{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+  .hero .intro{font-size:14.5px;color:var(--muted);line-height:1.55;margin:14px auto 0;max-width:320px}
+
+  /* primary CTA = inversie, accent-loos */
+  .primary{width:100%;min-height:var(--tap);margin:26px 0 12px;border:0;border-radius:14px;cursor:pointer;
+    background:var(--paper);color:var(--ink);font:600 16px/1 var(--sans);letter-spacing:.1px;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    box-shadow:0 10px 28px rgba(0,0,0,.45);transition:transform .25s var(--ease),filter .25s var(--ease)}
+  .primary:hover{filter:brightness(1.04)}
+  .primary:active{transform:scale(.975)}
+
+  /* actions */
+  .actions{display:flex;flex-direction:column;gap:10px}
+  .action{display:flex;align-items:center;gap:14px;min-height:var(--tap);padding:0 16px;background:var(--surface);
+    border:1px solid var(--rule);border-radius:14px;color:var(--paper);text-decoration:none;cursor:pointer;
+    transition:transform .2s var(--ease),border-color .2s var(--ease)}
+  .action:active{transform:scale(.985)}
+  .action:hover{border-color:var(--rule-strong)}
+  .action .ic{width:38px;height:38px;border-radius:11px;flex:0 0 auto;background:var(--raised);display:grid;place-items:center;color:var(--paper)}
+  .action .lbl{flex:1}
+  .action .lbl b{display:block;font-size:15px;font-weight:600;color:var(--paper)}
+  .action .lbl span{font-size:12.5px;color:var(--muted2)}
+  .action .chev{color:var(--muted2);flex:0 0 auto}
+
+  /* about */
+  .about{margin-top:24px;padding:18px 20px;background:var(--surface);border:1px solid var(--rule);border-radius:16px}
+  .about h2{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2);margin-bottom:7px}
+  .about p{font-size:13.5px;color:var(--muted);line-height:1.55}
+
+  .footmeta{font-family:var(--mono);text-align:center;color:var(--muted2);font-size:11px;margin-top:24px;line-height:1.9}
+  .footmeta a{color:var(--muted2)}
+
+  /* event-modus (accent-loos, dot in off-white) */
+  .eventbar{display:flex;align-items:center;justify-content:center;gap:9px;margin:0 0 16px;padding:11px 16px;
+    background:var(--surface);border:1px solid var(--rule);border-radius:12px;
+    font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .eventbar .dot{width:7px;height:7px;border-radius:50%;background:var(--paper);flex:0 0 auto}
+
+  .reveal{opacity:0;transform:translateY(12px);animation:up .6s var(--ease) forwards}
+  .reveal:nth-child(2){animation-delay:.05s}.reveal:nth-child(3){animation-delay:.1s}
+  @keyframes up{to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){.reveal{animation:none;opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <div class="top">
+    <span class="wordmark">RND<i>X</i> <span class="labs">LABS</span></span>
+    <span class="eyebrow">Digital card</span>
+  </div>
+
+  <header class="hero">
+    <div class="grid"></div>
+    <div class="avatar reveal" id="avatar"><img src="/assets/murat-yeni.jpg" alt="Murat Yeni" onerror="this.remove();document.getElementById('avatar').textContent='MY'"></div>
+    <h1 class="reveal" id="name">Murat Yeni</h1>
+    <div class="role reveal" id="role">Founder &amp; Lead Systems Architect</div>
+    <p class="intro reveal" id="intro">Building deep-tech at RNDX Labs — energy monitoring and grid intelligence, from prototype to working system.</p>
+  </header>
+
+  <button class="primary" id="saveBtn">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+    Save contact
+  </button>
+
+  <nav class="actions" id="actions"></nav>
+
+  <section class="about">
+    <h2>About RNDX Labs</h2>
+    <p id="about">Deep-tech innovation lab in Utrecht. R&amp;D in energy monitoring and grid intelligence, from prototype to working system.</p>
+  </section>
+
+  <div class="footmeta" id="footmeta"></div>
+
+</div>
+
+<script>
+const DATA={
+  name:"Murat Yeni", org:"RNDX Labs",
+  title:"Founder & Lead Systems Architect",
+  url:"https://rndxlabs.com/murat-yeni",
+  website:"rndxlabs.com", websiteUrl:"https://rndxlabs.com",
+  email:"murat@rndxlabs.com",
+  phone:"06 43 645 645", whatsapp:"31643645645",
+  linkedin:"https://www.linkedin.com/in/murat-yeni",
+  kvk:"76492117",
+  photo:"https://rndxlabs.com/assets/murat-yeni.jpg"
+};
+
+/* Event-modus — los van de statistiek. on:false => geen banner. */
+const EVENT={ on:true, label:"PVB-bijeenkomst · Arnhem" };
+
+/* Statistiek — anonieme, cookieloze ping. Leeg = uit (faalt stil). TODO: COLLECTOR_URL uit handoff #3 */
+const COLLECTOR_URL="";
+(function ping(){
+  if(!COLLECTOR_URL) return;
+  try{
+    const body=JSON.stringify({site:"rndx",page:"murat-yeni",event:EVENT.on?EVENT.label:null,ref:document.referrer||null});
+    if(navigator.sendBeacon){navigator.sendBeacon(COLLECTOR_URL,new Blob([body],{type:"application/json"}));}
+    else{fetch(COLLECTOR_URL,{method:"POST",mode:"no-cors",keepalive:true,headers:{"Content-Type":"application/json"},body:body}).catch(function(){});}
+  }catch(e){}
+})();
+
+/* Event-bewuste, Engelstalige prefilled berichten */
+const _ctx=EVENT.on?(" — we met at "+EVENT.label):"";
+const WA_TEXT=encodeURIComponent("Hi Murat"+_ctx+", ");
+const MAIL_SUBJECT=encodeURIComponent(EVENT.on?("Hello — "+EVENT.label):"Hello");
+const MAIL_BODY=encodeURIComponent("Hi Murat,\n\n"+(EVENT.on?("Great to meet you at "+EVENT.label+". "):"")+"I'd like to get in touch.\n\n");
+
+function items(d){return[
+  {t:"Call",s:d.phone,href:"tel:+"+d.whatsapp,ic:'<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>'},
+  {t:"Email",s:d.email,href:"mailto:"+d.email+"?subject="+MAIL_SUBJECT+"&body="+MAIL_BODY,ic:'<path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22,6 12,13 2,6"/>'},
+  {t:"WhatsApp",s:"Send a message",href:"https://wa.me/"+d.whatsapp+"?text="+WA_TEXT,ic:'<path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>'},
+  {t:"LinkedIn",s:"Connect",href:d.linkedin,ic:'<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>'},
+  {t:"Website",s:d.website,href:d.websiteUrl,ic:'<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>'}
+];}
+const chev='<svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>';
+const nav=document.getElementById("actions");
+items(DATA).forEach(a=>{const el=document.createElement("a");el.className="action";el.href=a.href;el.target="_blank";el.rel="noopener";
+  el.innerHTML=`<span class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${a.ic}</svg></span><span class="lbl"><b>${a.t}</b><span>${a.s}</span></span>${chev}`;
+  nav.appendChild(el);});
+document.getElementById("footmeta").innerHTML=DATA.email+" · "+DATA.phone+"<br>RNDX Labs B.V. · KvK "+DATA.kvk;
+
+/* Event-banner — bovenaan, los van de statistiek */
+if(EVENT.on){
+  const b=document.createElement("div");
+  b.className="eventbar reveal";
+  b.innerHTML='<span class="dot"></span>You met me at '+EVENT.label;
+  document.querySelector(".phone").prepend(b);
+}
+
+/* vCard met ingebedde foto (same-origin fetch -> base64), met PHOTO;VALUE=URI fallback */
+async function buildVCard(){
+  const d=DATA,p=d.name.split(" ");
+  const lines=["BEGIN:VCARD","VERSION:3.0","N:"+p.slice(1).join(" ")+";"+p[0]+";;;","FN:"+d.name,
+    "ORG:"+d.org,"TITLE:"+d.title,"TEL;TYPE=CELL:+"+d.whatsapp,"EMAIL;TYPE=WORK:"+d.email,
+    "URL:"+d.url,"X-SOCIALPROFILE;TYPE=linkedin:"+d.linkedin];
+  try{
+    const res=await fetch("/assets/murat-yeni.jpg",{cache:"force-cache"});
+    if(!res.ok) throw new Error("photo "+res.status);
+    const bytes=new Uint8Array(await res.arrayBuffer());
+    let bin=""; for(let i=0;i<bytes.length;i++) bin+=String.fromCharCode(bytes[i]);
+    /* vCard 3.0: regels vouwen op 75 octets, vervolgregels beginnen met spatie */
+    lines.push(("PHOTO;ENCODING=b;TYPE=JPEG:"+btoa(bin)).replace(/(.{74})/g,"$1\r\n "));
+  }catch(e){
+    lines.push("PHOTO;VALUE=URI:"+d.photo);
+  }
+  lines.push("END:VCARD");
+  return lines.join("\r\n");
+}
+document.getElementById("saveBtn").addEventListener("click",async()=>{
+  const v=await buildVCard();
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(new Blob([v],{type:"text/vcard"}));
+  a.download=DATA.name+" - RNDX Labs.vcf";
+  document.body.appendChild(a);a.click();a.remove();
+});
+</script>
+</body>
+</html>
