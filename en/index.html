@@ -74,6 +74,7 @@
     font-size: 16px;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
+    scrollbar-gutter: stable;
   }
 
   body {
@@ -812,11 +813,14 @@
     .industries-layout { grid-template-columns: 1fr; gap: 48px; }
     .contact-layout { grid-template-columns: 1fr; gap: 64px; }
     .about-pillars { grid-template-columns: 1fr; }
+    .spec-row { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .industry-item { flex-direction: column; align-items: flex-start; gap: 8px; }
     .industry-arrow { display: none; }
-    .industry-meta { gap: 0; justify-content: flex-end; }
-    .industry-desc { text-align: right; }
+    .industry-meta { gap: 0; justify-content: flex-start; }
+    .industry-desc { text-align: left; }
     footer { flex-direction: column; gap: 20px; align-items: flex-start; padding: 24px; }
-    .footer-inner { flex-direction: column; gap: 20px; align-items: flex-start; }
+    .footer-inner { flex-direction: column; gap: 12px; align-items: flex-start; }
+    .footer-inner .footer-logo { margin-bottom: 4px; }
   }
 </style>
 </head>
