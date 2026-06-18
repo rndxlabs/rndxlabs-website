@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#F7F6F3">
 
 <!-- Primary SEO -->
 <title>RNDX Labs — Deep-Tech Innovatie</title>
@@ -23,6 +24,9 @@
 <meta property="og:title" content="RNDX Labs — Deep-Tech Innovatie">
 <meta property="og:description" content="RNDX Labs ontwikkelt geavanceerde hardware- en softwaretechnologieën, en vertaalt complex onderzoek naar operationele systemen en marktklare producten.">
 <meta property="og:image" content="https://rndxlabs.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="RNDX Labs">
 <meta property="og:locale" content="nl_NL">
 <meta property="og:site_name" content="RNDX Labs">
 
@@ -37,6 +41,43 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="icon" href="/assets/icon-192.png" sizes="192x192">
 <link rel="icon" href="/assets/icon-512.png" sizes="512x512">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://rndxlabs.com/#organization",
+      "name": "RNDX Labs",
+      "legalName": "RNDX Labs B.V.",
+      "url": "https://rndxlabs.com/",
+      "logo": "https://rndxlabs.com/assets/icon-512.png",
+      "email": "contact@rndxlabs.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Zeist",
+        "addressRegion": "Utrecht",
+        "addressCountry": "NL"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "KVK",
+        "value": "76492117"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://rndxlabs.com/#website",
+      "url": "https://rndxlabs.com/",
+      "name": "RNDX Labs",
+      "publisher": { "@id": "https://rndxlabs.com/#organization" },
+      "inLanguage": "nl-NL"
+    }
+  ]
+}
+</script>
 <style>
   /* Lokale fonts — spiegelt 1:1 wat de Google CDN voorheen laadde. Geen externe verbindingen. */
   @font-face { font-family: 'DM Mono'; font-style: normal; font-weight: 300; font-display: swap; src: url('/fonts/dm-mono-v16-latin-300.woff2') format('woff2'); }

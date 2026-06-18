@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#F7F6F3">
 
 <title>404 — Pagina niet gevonden · RNDX Labs</title>
 <meta name="robots" content="noindex, follow">
@@ -133,7 +134,7 @@
     color: var(--ink);
     margin-bottom: 32px;
   }
-  h1 em { font-style: italic; color: var(--ink-mid); }
+  h1 em, h2 em { font-style: italic; color: var(--ink-mid); }
 
   .nf-block p {
     font-size: 16px;
@@ -188,7 +189,11 @@
     margin: 80px 0;
   }
 
-  .nf-block.compact h1 {
+  .nf-block.compact h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.02em;
     font-size: clamp(30px, 3vw, 40px);
     line-height: 1.12;
     margin-bottom: 24px;
@@ -242,7 +247,7 @@
 
     <!-- EN -->
     <div class="nf-block compact">
-      <h1>This page could not be <em>found</em>.</h1>
+      <h2>This page could not be <em>found</em>.</h2>
       <p>The page you're looking for doesn't exist or has moved.</p>
       <a href="/en/" class="btn-primary">To the homepage</a>
       <div class="quick-links">
