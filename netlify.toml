@@ -31,6 +31,18 @@
   status = 200
   force  = true
 
+# ── Privacy: clean-URL rewrites (200, geen 301-hop) ──
+[[redirects]]
+  from   = "/privacy"
+  to     = "/privacy/index.html"
+  status = 200
+  force  = true
+
+[[redirects]]
+  from   = "/en/privacy"
+  to     = "/en/privacy/index.html"
+  status = 200
+
 # ── Demo redirects ──────────────────────────────────
 # Korte URL's die doorverwijzen naar de demo map
 
